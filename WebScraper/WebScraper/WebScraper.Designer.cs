@@ -53,6 +53,7 @@
             // 
             this.label_url.AutoSize = true;
             this.label_url.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_url.ForeColor = System.Drawing.SystemColors.Control;
             this.label_url.Location = new System.Drawing.Point(69, 40);
             this.label_url.Name = "label_url";
             this.label_url.Size = new System.Drawing.Size(62, 21);
@@ -73,6 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(1017, 518);
             this.Controls.Add(this.btn_enter);
             this.Controls.Add(this.label_url);
