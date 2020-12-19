@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -18,9 +19,7 @@ namespace WebScraper
     {
         public Form1_WebScraper()
         {
-
             InitializeComponent();
-
         }
 
         //Built to scrape off docs.microsoft websites in this format: (ex)
@@ -33,13 +32,13 @@ namespace WebScraper
         //https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/add-history?view=powershell-7.1
 
 
-
         private async void btn_enter_Click(object sender, EventArgs e)
         {
             List<string> itemList = new List<string>();
+
+            //url textbox to var
             var url = tb_url;
 
-            //Create an object of the HttpClient
             var httpClient = new HttpClient();
 
             //HttpClient connects to the URL
@@ -48,7 +47,6 @@ namespace WebScraper
             //Create a new AgilityPack HTMLDocument
             var htmlDocument = new HtmlAgilityPack.HtmlDocument();
 
-            //Loads the html doc for our html variable and passes it to htmlDocument
             htmlDocument.LoadHtml(html);
 
             //Seach and create list of results
@@ -81,8 +79,6 @@ namespace WebScraper
                     tb_main.Text += item;
                 }
                 //PAR
-
-
             }
 
             if (docOdd.Count != 0 && docEven.Count != 0)
@@ -104,8 +100,19 @@ namespace WebScraper
                 }
                 //PARSE OUT DESCRIPTIONS
                 //GO THROUGH HREF'S 
-
             }
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(tb_filepath.Text, tb_main.Text);
+        }
+
+        private void btn_fileExplorer_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.ShowDialog();
+            tb_filepath.Text = openFileDialog.FileName.ToString();
         }
     }
 }
