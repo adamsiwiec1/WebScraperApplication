@@ -2,9 +2,12 @@
 
 Web Scraper C# Windows Forms Desktop Application:
 
--Code is easily tweakable just need to change up html elemnents you are searching for. \n
+-Code is easily tweakable just need to change up html elemnents you are searching for.
+
 -Built to scrape off microsoft document webpages.
+
 -Should work with majority of https://docs.microsoft.com webpaages
+
 -Ex. of working websites that it will pull from without errors.
 
 -Examples:
