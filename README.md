@@ -6,7 +6,7 @@ Web Scraper C# Windows Forms Desktop Application:
 
 -Built to scrape off microsoft document webpages.
 
--Should work with majority of https://docs.microsoft.com webpaages
+-Should work with majority of https://docs.microsoft.com webpages
 
 -Ex. of working websites that it will pull from without errors.
 
